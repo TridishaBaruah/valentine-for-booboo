@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Lap!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background: #1a1a1a; overflow: hidden; }
+        .victory-card { position: absolute; z-index: 10; text-align: center; width: 100%; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    </style>
+</head>
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+
+    <div class="victory-card">
+        <h1 class="victory-text">YAY!! BOOBOO said YES! 💖</h1>
+        <h2 class="sub-victory">Happy Valentine's Day! 🏁</h2>
+        <button class="btn btn-yes" style="pointer-events: auto; margin-top: 20px;" onclick="location.reload()">Replay Fireworks</button>
+    </div>
+
+    <script src="fireworks.js"></script>
+</body>
+</html>
