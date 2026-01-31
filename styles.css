@@ -1,0 +1,155 @@
+:root {
+    --pink: #ff85a2;
+    --dark-pink: #f06292;
+    --blue: #81d4fa;
+    --racing-red: #ff4b2b;
+    --black: #2d3436;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Checkered Pattern */
+.checkered-border {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    background-image: 
+        linear-gradient(45deg, #000 25%, transparent 25%), 
+        linear-gradient(-45deg, #000 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #000 75%),
+        linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: #fff;
+}
+
+.dashboard-container {
+    background: var(--black);
+    padding: 20px;
+    border-radius: 30px;
+    border: 8px solid #555;
+    box-shadow: 0 20px 0 #222;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.status-light {
+    width: 12px;
+    height: 12px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+    animation: blink 1s infinite;
+}
+
+.content-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    color: var(--black);
+}
+
+.main-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 15px;
+}
+
+.proposal-text {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    color: var(--dark-pink);
+}
+
+.button-pit-stop {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 60px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-yes {
+    background: var(--racing-red);
+    color: white;
+    box-shadow: 0 5px 0 #b33927;
+}
+
+.btn-no {
+    background: #eee;
+    color: #666;
+    position: relative;
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #b33927;
+}
+
+/* Racing Track & Car */
+.track {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    border-bottom: 4px dashed #999;
+}
+
+.car {
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0;
+    animation: drive 5s linear infinite;
+}
+
+.victory-text {
+    color: var(--pink);
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+@keyframes drive {
+    from { left: -50px; }
+    to { left: 100%; }
+}
+
+@keyframes blink {
+    50% { opacity: 0.3; }
+}
+
+@media (max-width: 480px) {
+    .proposal-text { font-size: 1.4rem; }
+}
